@@ -1,0 +1,15 @@
+.area-img {
+    position: relative;
+}
+
+.area-img h4{
+    position: absolute;
+    top: 17px;
+    left: 65px;
+}
+
+.area-img p {
+    position: absolute;
+    top: 60px;
+    left: 65px;
+}

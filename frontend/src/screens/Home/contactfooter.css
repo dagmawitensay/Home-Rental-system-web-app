@@ -1,0 +1,12 @@
+.base {
+    background-image: url("../../Foo/Home/Rectangle\ 24.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height:300px;
+    margin: auto;
+    margin-bottom: 3.5em;
+}
+
+.base-topic {
+    width:37%;
+}

@@ -1,0 +1,8 @@
+.get-start-card:hover {
+    box-shadow: 3px 3px 5px;
+    transition: .8s;
+}
+
+a {
+    text-decoration: none;
+}

@@ -1,0 +1,13 @@
+.searchbox {
+    width: 58%;
+    background-color: #fff;
+    border-radius: 6px;
+    /* position: absolute;
+    bottom: -1px; */
+
+}
+
+
+.selected {
+    color: grey;
+}

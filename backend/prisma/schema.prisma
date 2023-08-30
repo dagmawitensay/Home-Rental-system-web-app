@@ -1,0 +1,175 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+
+model User {
+    id    Int  @id @default(autoincrement())
+   
+  
+  User_Name String @unique
+  hash String
+  refreshPassword String ?
+  lesser Lesser ?
+  admin Admin ?
+  lesse Lesse ?
+
+  role    Role     @default(LESSE)
+    
+  }
+
+
+model Admin {
+    id    Int  @id @default(autoincrement())
+    author  User  @relation(fields: [authorId], references: [id],onDelete: Cascade)
+    authorId  Int  @unique
+    First_Name String
+Last_Name String
+Phone_Number String
+Email String
+  
+  
+
+    
+  }
+
+
+
+
+
+
+
+
+  model Lesser {
+    id    Int  @id @default(autoincrement())
+    author  User  @relation(fields: [authorId], references: [id],onDelete: Cascade)
+    authorId  Int  @unique
+    First_Name String 
+  Last_Name String 
+  Phone_Number String 
+  Phone_Number2 String ?
+
+
+  Email String 
+  
+  Region String 
+  Zone String 
+  Wereda String
+  City String ?
+    house House[]
+
+    
+  }
+  
+
+model Lesse {
+    id    Int  @id @default(autoincrement())
+  
+    author  User  @relation(fields: [authorId], references: [id],onDelete: Cascade)
+    authorId  Int  @unique
+    
+    First_Name String
+    Last_Name String
+    Phone_Number String
+    Email String
+  
+    house LesseOnHouse[]
+
+    
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  model House {
+    id       Int   @id @default(autoincrement())
+    
+     lesser   Lesser  @relation(fields: [lesserId], references: [id],onDelete: Cascade)
+    lesserId  Int
+   
+    Home_Type String
+  Approval_status Boolean ? @default(false)
+   Size String
+  Home_Photo Home_Photo   ? 
+  Price String
+   createdAt DateTime @default(now())
+   updatedAt DateTime @updatedAt
+  
+  
+  
+  City String
+  Sub_City String
+  Wereda String
+  Kebele String
+  home_no String
+    deal Int ? @default(0)
+  report Int ? @default(0)
+  like Int ? @default(0)
+  
+  lesse LesseOnHouse[]
+  
+  }
+
+
+  model LesseOnHouse {
+  house       House     @relation(fields: [houseId], references: [id],onDelete: Cascade)
+  houseId     Int // relation scalar field (used in the `@relation` attribute above)
+  lesse   Lesse @relation(fields: [lesseId], references: [id])
+  lesseId Int // relation scalar field (used in the `@relation` attribute above)
+  Is_deal Boolean ? @default(false)
+  Is_report Boolean ? @default(false)
+  Is_like Boolean ?   @default(false)
+
+  @@id([houseId,lesseId])
+}
+  
+  
+  
+  
+  
+  model Home_Photo {
+    id     Int  @id @default(autoincrement())
+    
+    house   House @relation(fields: [ houseId], references: [id],onDelete: Cascade)
+    houseId  Int @unique
+  
+  
+  Toilet String
+  Kitchen String
+  Shower String
+  Door String
+  Floor String
+  Roof String
+  Wall String
+  Home_license String
+  
+  
+  }
+
+  
+enum Role {
+   LESSE 
+  LESSER
+  ADMIN
+}
+
+
+
+
