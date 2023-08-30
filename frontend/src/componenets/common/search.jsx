@@ -3,9 +3,10 @@ import Button from './button';
 import './search.css';
 
 
-function SearchBar() {
+function SearchBar(props) {
+  const width = props.width ? props.width: '100%';
     return (
-        <form className="searchbox row m-auto mb-5 mt-2 border-radius p-3 shadow">
+        <form className="searchbox row m-auto mb-5 mt-2 border-radius p-3 shadow" style={{width: width}}>
             <div className="property col-md-4 border-end border-2">
             <p className="px-3">Locations</p>
             <select className="form-select border-0" aria-label="select by location" id="location">

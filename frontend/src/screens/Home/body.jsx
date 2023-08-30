@@ -1,9 +1,10 @@
 import React from 'react';
 import Featured from '../../componenets/common/Featured';
 import Category from './category';
-import './body.css';
+import '../common/body.css';
 import Services from './services';
 import Listing from '../common/listing';
+import HomeListing from '../../API/Listing/listing';
 
 export default function Body() {
     return (
@@ -31,7 +32,8 @@ export default function Body() {
                 topic="Latest Properties of Rent"
                 detail=""
                 />
-                <Listing />
+                {/* <Listing /> */}
+                <HomeListing />
             </main>
         </section>
     )

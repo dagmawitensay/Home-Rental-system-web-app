@@ -17,19 +17,19 @@ export default function Card(props) {
           </div>
           <div className="card-body">
             <a href="" className="text-reset">
-              <h5 className="card-title mb-3">${props.SubCity}</h5>
+              <h5 className="card-title mb-3">{props.subCity}</h5>
             </a>
-            <a href="" className="text-reset">
+            {/* <a href="" className="text-reset">
               <p>${props.id}</p>
-            </a>
-            <h6 className="mb-3" style={{color:'#4A60A1'}}>${props.Price} birr</h6>
+            </a> */}
+            <h6 className="mb-3" style={{color:'#4A60A1'}}>{props.price} birr</h6>
             <div className="specification">
               <i className="fa-thin fa-bed-front"></i>
               <span className="bedroom"></span>
               <i className="fa-thin fa-bath"></i>
               <span className="bathrooms">4</span>
               <i className="fa-thin fa-maximize"></i>
-              <span className="area-size">${props.Size} ft</span>
+              <span className="area-size">${props.size} ft</span>
             </div>
           </div>
         </div>

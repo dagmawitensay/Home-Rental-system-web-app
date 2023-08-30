@@ -3,10 +3,11 @@ import homes from '../../API/Listing/listing';
 import Card from './card';
 
 
+
 export default function Listing() {
     return (
         <div class="row" id="options">                                        
-        {
+        {/* {
             homes.map((home) => {
                 return (
                     <Card
@@ -17,7 +18,7 @@ export default function Listing() {
                     />
                 )
             })
-        }
+        } */}
         </div>
     )
     

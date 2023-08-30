@@ -1,0 +1,7 @@
+.normal-header-img {
+    position: relative;
+    background-image: url("../../Foo/Home/Rectangle\ 25.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 240px;
+}
