@@ -149,7 +149,7 @@ export class AuthService {
 
     const tokens = await this.GetToken(user.id, user.User_Name, user.role);
     await this.UpdateRefreshHash(user.id, tokens.refresh_token);
-  return {Tokens:tokens,user:user};
+  return {Tokens:tokens,user:user, message: "Loged in successfuly!" };
   }
   logout() {
     return "logout";

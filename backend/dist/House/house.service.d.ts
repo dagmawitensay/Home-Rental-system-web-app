@@ -26,10 +26,10 @@ export declare class HouseService {
         };
     })[]>;
     GetDetailHouseByLesser(lesserId: number, houseId: number): Promise<House & {
-        Home_Photo: import(".prisma/client").Home_Photo;
         lesse: {
             Is_deal: boolean;
         }[];
+        Home_Photo: import(".prisma/client").Home_Photo;
         _count: {
             lesse: number;
         };
@@ -43,8 +43,8 @@ export declare class HouseService {
     })[]>;
     GetHouseById(lesseId: number, houseId: number): Promise<House & {
         lesser: Lesser;
-        Home_Photo: import(".prisma/client").Home_Photo;
         lesse: import(".prisma/client").LesseOnHouse[];
+        Home_Photo: import(".prisma/client").Home_Photo;
         _count: {
             lesse: number;
         };

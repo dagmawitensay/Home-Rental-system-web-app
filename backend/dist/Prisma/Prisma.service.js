@@ -17,7 +17,7 @@ let PrismaService = class PrismaService extends client_1.PrismaClient {
         super({
             datasources: {
                 db: {
-                    url: "mysql://root:deribewsoftware@localhost:3306/house_rental?schema=public"
+                    url: "mysql://root:@localhost:3306/house_rental?schema=public"
                 }
             }
         });

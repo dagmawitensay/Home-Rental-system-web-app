@@ -1,13 +1,13 @@
 import React from 'react';
 import Header from '../common/header';
-import HouseRegistrationForm from './main';
+import Body from './main';
 import Footer from '../common/footer';
 
-export default function HousePostScreen() {
+export default function AdminScreen() {
     return (
         <div>
-            <Header message="POST A HOUSE" />
-            <HouseRegistrationForm />
+            <Header message="Admin"/>
+            <Body />
             <Footer />
         </div>
     )
