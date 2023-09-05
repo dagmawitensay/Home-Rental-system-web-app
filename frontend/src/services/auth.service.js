@@ -36,10 +36,10 @@ const login = async (User_Name, Password) => {
         Password
     }
     );
-    console.log(response.data)
     if (response.data.Tokens.access_token) {
         localStorage.setItem("user", JSON.stringify(response.data));
     }
+    console.log(response.data);
     return response.data;
 }
 

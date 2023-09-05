@@ -98,7 +98,7 @@ export default function HouseImageForm({
                 className="form-control"
                 placeholder="Toilet"
                 onChange={handleChange}
-                value={values.toilet}
+                // value={values.toilet}
               />
             </div>
             <div className="form-group py-2 d-flex flex-column">
@@ -110,7 +110,7 @@ export default function HouseImageForm({
                 className="form-control"
                 placeholder="Kitchen"
                 onChange={handleChange}
-                value={values.kitchen}
+                // value={values.kitchen}
               />
             </div>
             <div className="form-group py-2 d-flex flex-column">
@@ -122,7 +122,7 @@ export default function HouseImageForm({
                 className="form-control"
                 placeholder="shower"
                 onChange={handleChange}
-                value={values.shower}
+                // value={values.shower}
               />
             </div>
             <div className="form-group py-2 d-flex flex-column">
@@ -134,7 +134,7 @@ export default function HouseImageForm({
                 className="form-control"
                 placeholder="houseLicense"
                 onChange={handleChange}
-                value={values.houseLicense}
+                // value={values.houseLicense}
               />
             </div>
             <div className="from-group py-2 d-flex align-items-baseline">

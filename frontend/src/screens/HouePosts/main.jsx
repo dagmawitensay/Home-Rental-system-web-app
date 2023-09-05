@@ -3,6 +3,7 @@ import "./post.css";
 import HouseInfoForm from "./houseinfoform";
 import { useDispatch, useSelector } from "react-redux";
 import HouseImageForm from "./houseimagefrom";
+import { registerHouse } from "../../slices/homes";
 
 export default function HouseRegistrationForm() {
   const initialValues = {
@@ -84,7 +85,24 @@ export default function HouseRegistrationForm() {
 
   const handleSubmit = () => {
     console.log(currState);
+   
+    dispatch(
+      registerHouse({
+        currState
+      })
+    )
+      .unwrap()
+      .then((response) => {
+        console.log(response)
+        // navigate("/properties");
+        // window.location.reload();
+        // console.log("to change");
+      })
+      .catch(() => {
+        // setLoading(false);
+      });
   }
+
     const { step } = currState;
   const {
     houseType,

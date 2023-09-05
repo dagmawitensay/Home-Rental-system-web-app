@@ -26,7 +26,7 @@ export default function NavBar(props) {
 
   useEffect(() => {
     if (currentUser) {
-      const role = currentUser.user.role;
+      const role = currentUser.role;
       switch (role) {
         case "LESSER":
           setShowLesserBoard(true);

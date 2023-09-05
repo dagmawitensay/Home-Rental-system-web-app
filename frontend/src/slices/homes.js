@@ -4,43 +4,12 @@ import homeService from "../services/home.service";
 export const registerHouse = createAsyncThunk(
   "lesser",
   async({
-    Home_Type,
-    Approval_status,
-    Size,
-    Price,
-    City,
-    Sub_City,
-    Wereda,
-    Kebele,
-    home_no,
-    Toilet,
-    kitchen,
-    shower,
-    Door,
-    Floor,
-    Roof,
-    Wall,
-    Home_license,
+    currState
   }, thunkAPI) => {
+    
     try {
       const response = await homeService.registerHouse(
-        Home_Type,
-        Approval_status,
-        Size,
-        Price,
-        City,
-        Sub_City,
-        Wereda,
-        Kebele,
-        home_no,
-        Toilet,
-        kitchen,
-        shower,
-        Door,
-        Floor,
-        Roof,
-        Wall,
-        Home_license
+        currState
       );
       return response.data;
     } catch (error) {}

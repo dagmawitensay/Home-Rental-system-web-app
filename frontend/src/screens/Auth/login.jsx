@@ -34,18 +34,19 @@ const handleLogin = (formValue) => {
   const {User_Name, Password} = formValue;
   setLoading(true);
 
-  dispatch(login({User_Name, Password})).unwrap().then(() => {
-
-    navigate("/profile");
-    window.location.reload();
-    console.log("to change")
-  }).catch(() => {
-    setLoading(false);
-  })
+  dispatch(login({ User_Name, Password }))
+    .unwrap()
+    .then(() => {
+      console.log("logged in succey");
+    })
+    .catch((error) => {
+      setLoading(false);
+    });
 }
 
 if (isLoggedIn) {
   const user = JSON.parse(localStorage.getItem('user'));
+  console.log(user)
   const role = user.user.role;
   switch (role) {
     case 'LESSER':
@@ -57,6 +58,7 @@ if (isLoggedIn) {
   }
   return <Navigate to="/profile" />
 }
+
 
 return (
   <div className="col-md-12 login-form">
