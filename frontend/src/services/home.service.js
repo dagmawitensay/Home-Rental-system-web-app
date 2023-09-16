@@ -1,9 +1,14 @@
 import axios from "axios";
 import authHeader from "./auth-header";
 
+
 const API_URL = "http://localhost:3336/house/";
-const user = JSON.parse(localStorage.getItem('user'));
-const lesserId = user.user.id
+
+const getLesserId = () => {
+    const user = JSON.parse(localStorage.getItem('user'));
+    const lesserId = user.user.id;
+    return lesserId
+}
 
 const registerHouse = async (currState
 ) => {
@@ -15,7 +20,7 @@ const registerHouse = async (currState
   formData.append("Price", currState.Price);
   formData.append("City", currState.City);
   formData.append("Sub_City", currState.Sub_City);
-  formData.append("Wereda", "Alemgena"); // Fix variable name
+  formData.append("Wereda", currState.Wereda); // Fix variable name
   formData.append("Kebele", currState.Kebele);
   formData.append("home_no", currState.home_no);
   formData.append("Size", currState.Size);
@@ -24,10 +29,12 @@ const registerHouse = async (currState
   formData.append("wall", currState.Wall);
   formData.append("roof", currState.Roof);
   formData.append("toilet", currState.Toilet);
-  formData.append("shower", currState.shower);
-  formData.append("kitchen", currState.kitchen);
-  formData.append("licenses", currState.Home_license);
+  formData.append("shower", currState.Shower);
+  formData.append("kitchen", currState.Kitchen);
+  formData.append("licenses", currState.houseLicense);
+  console.log(formData.keys())
 const auth = authHeader();
+const lesserId = getLesserId();
   const response = await axios.post(API_URL + lesserId, formData, {
         headers: {
             "Content-Type": "multipart/form-data",
@@ -38,12 +45,15 @@ const auth = authHeader();
     }).catch((error) => {
         console.log(error)
     })
-    console.log(response);
 };
 
 
-const getAllLesserHouses = (lesserId) => {
-    return axios.get(API_URL + "lesser/" + lesserId, { headers: authHeader() })
+const getAllLesserHouses = async () => {
+    const lesserId = getLesserId();
+    const response = await axios.get(API_URL + "lesser/" + lesserId, { headers: authHeader() })
+        // console.log(response
+    // })
+    return response.data;
 }
 
 

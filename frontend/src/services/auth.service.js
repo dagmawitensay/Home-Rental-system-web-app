@@ -47,9 +47,19 @@ const logout = () => {
     localStorage.removeItem('user')
 }
 
+const isLoggedIn = () => {
+    try{
+        localStorage.getItem('user');
+        return true;
+    }catch{
+        return false;
+    }
+}
+
 export default {
     lesserRegister,
     lesseeRegister,
     login,
-    logout
+    logout,
+    isLoggedIn
 }

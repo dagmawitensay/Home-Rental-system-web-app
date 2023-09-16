@@ -38,6 +38,9 @@ let HouseController = class HouseController {
         return this.houseService.ApproveHouseById(houseId, dto);
     }
     async CreateHouse(lesserId, dto, body, file) {
+        console.log(file, "here printig file");
+        console.log(file["wall"][0]);
+        console.log(body);
         body.Wall = `http://localhost:3336/housePhoto/${file["wall"][0].filename}`;
         body.Door = `http://localhost:3336/housePhoto/${file["door"][0].filename}`;
         body.Shower = `http://localhost:3336/housePhoto/${file["shower"][0].filename}`;

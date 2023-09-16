@@ -26,7 +26,7 @@ export default function NavBar(props) {
 
   useEffect(() => {
     if (currentUser) {
-      const role = currentUser.role;
+      const role = currentUser.user.role;
       switch (role) {
         case "LESSER":
           setShowLesserBoard(true);
@@ -72,11 +72,11 @@ export default function NavBar(props) {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mb-2 mb-lg-0 ms-auto pe-5">
-              <li className="nav-item">
+              {showLesseBoard && (<li className="nav-item">
                 <Link to={"/"} className={"nav-link active " + textColor}>
                   Home
                 </Link>
-              </li>
+              </li>)}
               {showLesseBoard && (
                 <li className="nav-item">
                   <Link

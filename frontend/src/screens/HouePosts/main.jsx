@@ -8,47 +8,47 @@ import { registerHouse } from "../../slices/homes";
 export default function HouseRegistrationForm() {
   const initialValues = {
     step: 1,
-    houseType: "",
-    size: 0,
-    price: 0,
+    Home_Type: "",
+    Size: 0,
+    Price: 0,
     date: Date(),
-    city: "",
-    subCity: "",
-    kebele: "",
+    City: "",
+    Sub_City: "",
+    Kebele: "",
     Wereda: "",
-    zone: "",
-    houseNo: 0,
+    Zone: "",
+    home_no: 0,
     door: null,
     floor: null,
-    wall: null,
-    roof: null,
-    toilet: null,
-    kitchen: null,
-    shower: null,
-    houseLicence: null,
+    Wall: null,
+    Roof: null,
+    Toilet: null,
+    Kitchen: null,
+    Shower: null,
+    Home_license: null,
   };
 
   
   const [currState, setState] = useState({
     step: 1,
-    houseType: "",
-    size: 0,
-    price: 0,
+    Home_Type: "",
+    Size: 0,
+    Price: 0,
     date: Date(),
-    city: "",
-    subCity: "",
-    kebele: "",
+    City: "",
+    Sub_City: "",
+    Kebele: "",
     Wereda: "",
-    zone: "",
-    houseNo: 0,
+    Zone: "",
+    home_no: 0,
     door: null,
     floor: null,
-    wall: null,
-    roof: null,
-    toilet: null,
-    kitchen: null,
-    shower: null,
-    houseLicence: null,
+    Wall: null,
+    Roof: null,
+    Toilet: null,
+    Kitchen: null,
+    Shower: null,
+    Home_license: null,
   });
 
   const dispatch = useDispatch();
@@ -83,6 +83,17 @@ export default function HouseRegistrationForm() {
     })
   }
 
+  const handleFileChange = (event) => {
+    const {name, files} = event.target;
+    console.log(name, files[0])
+    setState((prevValues) => {
+      return {
+        ...prevValues,
+        [name]: files[0]
+      }
+    })
+  }
+
   const handleSubmit = () => {
     console.log(currState);
    
@@ -105,45 +116,45 @@ export default function HouseRegistrationForm() {
 
     const { step } = currState;
   const {
-    houseType,
-    size,
-    price,
+    Home_Type,
+    Size,
+    Price,
     date,
-    city,
-    subCity,
-    kebele,
+    City,
+    Sub_City,
+    Kebele,
     Wereda,
-    zone,
-    houseNo,
+    Zone,
+    home_no,
     door,
     floor,
-    wall,
-    roof,
-    toilet,
-    kitchen,
-    shower,
-    houseLicence,
+    Wall,
+    Roof,
+    Toilet,
+    Kitchen,
+    Shower,
+    Home_license,
   } = currState;
 
   const values = {
-    houseType,
-    size,
-    price,
+    Home_Type,
+    Size,
+    Price,
     date,
-    city,
-    subCity,
-    kebele,
+    City,
+    Sub_City,
+    Kebele,
     Wereda,
-    zone,
-    houseNo,
+    Zone,
+    home_no,
     door,
     floor,
-    wall,
-    roof,
-    toilet,
-    kitchen,
-    shower,
-    houseLicence,
+    Wall,
+    Roof,
+    Toilet,
+    Kitchen,
+    Shower,
+    Home_license,
   };
   return (
     <main className="m-auto pt-5">
@@ -198,7 +209,7 @@ export default function HouseRegistrationForm() {
               ) : (
                 <HouseImageForm
                   prevStep={prevStep}
-                  handleChange={handleChange}
+                  handleChange={handleFileChange}
                   handleSubmit={handleSubmit}
                   values={values}
                 />

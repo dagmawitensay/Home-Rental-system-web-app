@@ -4,7 +4,7 @@ import './card.css';
 export default function Card(props) {
     return (
         <div className='col-lg-4 col-md-6 mb-4 rounded'>
-        <div className= "card shadow border-0">
+        <div className= "card shadow border-0 p-0">
             <div className="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
             data-mdb-ripple-color="light">
             <img src={props.src} className="card-img-top img-fluid embed-responsive-item img-btn w-100 rounded"  id={props.imgeId} style={{height: '35vh'
@@ -29,7 +29,7 @@ export default function Card(props) {
               <i className="fa-thin fa-bath"></i>
               <span className="bathrooms">4</span>
               <i className="fa-thin fa-maximize"></i>
-              <span className="area-size">${props.size} ft</span>
+              <span className="area-size">${props.Size} ft</span>
             </div>
           </div>
         </div>

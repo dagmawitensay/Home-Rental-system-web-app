@@ -28,105 +28,93 @@ export default function HouseImageForm({
         <div className="row register-form">
           <div className="col-md-6">
             <div className="form-group py-2 d-flex flex-column">
-              <label for="door">Door</label>
+              <label for="Door">Door</label>
               <input
-                name="door"
+                name="Door"
                 type="file"
-                id="door"
+                id="Door"
                 className="form-control"
                 placeholder="Door *"
                 onChange={handleChange}
-                // value={values.door}
+                // value={values.Door}
               />
             </div>
             <div className="form-group py-2 d-flex flex-column">
-              <label for="door">Floor</label>
+              <label for="Floor">Floor</label>
               <input
-                name="floor"
+                name="Floor"
                 type="file"
-                id="floor"
+                id="Floor"
                 className="form-control"
                 placeholder="Floor"
                 onChange={handleChange}
-                // value={values.floor}
+                // value={values.Floor}
               />
             </div>
             <div className="form-group py-2 d-flex flex-column">
-              <label for="wall">Wall</label>
+              <label for="Wall">Wall</label>
               <input
-                name="wall"
+                name="Wall"
                 type="file"
-                id="wall"
+                id="Wall"
                 className="form-control"
                 placeholder="Wall"
                 onChange={handleChange}
-                // value={values.wall}
+                // value={values.Wall}
               />
             </div>
             <div className="form-group py-2 d-flex flex-column">
-              <label for="door">Roof</label>
+              <label for="Roof">Roof</label>
               <input
-                name="roof"
+                name="Roof"
                 type="file"
-                id="roof"
+                id="Roof"
                 className="form-control"
                 placeholder="Roof"
                 onChange={handleChange}
-                // value={values.roof}
-              />
-            </div>
-            <div className="form-group py-2 d-flex flex-column">
-              <label for="door">City</label>
-              <input
-                name="city"
-                type="file"
-                id="city"
-                className="form-control"
-                placeholder="City"
-                onChange={handleChange}
-                // value={values.city}
+                // value={values.Roof}
               />
             </div>
           </div>
           <div className="col-md-6">
             <div className="form-group py-2 d-flex flex-column">
-              <label for="door">Toilet</label>
+              <label for="Toilet">Toilet</label>
               <input
-                name="toilet"
+                name="Toilet"
                 type="file"
-                id="toilet"
+                id="Toilet"
                 className="form-control"
                 placeholder="Toilet"
                 onChange={handleChange}
-                // value={values.toilet}
+                // value={values.Toilet}
               />
             </div>
             <div className="form-group py-2 d-flex flex-column">
-              <label for="door">kitchen</label>
+              <label for="Kitchen">Kitchen</label>
               <input
-                name="kitchen"
+                name="Kitchen"
                 type="file"
-                id="kitchen"
+                id="Kitchen"
                 className="form-control"
                 placeholder="Kitchen"
                 onChange={handleChange}
-                // value={values.kitchen}
+                // value={values.Kitchenn}
               />
             </div>
             <div className="form-group py-2 d-flex flex-column">
-              <label for="door">Shower</label>
+              <label for="Shower">Shower</label>
               <input
-                name="shower"
+                name="Shower"
                 type="file"
-                id="shower"
+                id="Shower"
                 className="form-control"
-                placeholder="shower"
+                placeholder="Shower"
                 onChange={handleChange}
-                // value={values.shower}
+                // value={values.Shower}
               />
             </div>
             <div className="form-group py-2 d-flex flex-column">
-              <label for="door">House License</label>
+              <label for="Door">House License</label>
               <input
                 name="houseLicense"
                 type="file"
@@ -176,40 +164,40 @@ export default function HouseImageForm({
 //     <div className="row register-form">
 //       <div className="col-md-6">
 //         <div className="form-group">
-//           <label for="door">Door</label>
+//           <label for="Door">Door</label>
 //           <input
 //             type="file"
-//             id="door"
+//             id="Door"
 //             className="form-control"
 //             placeholder="Door *"
 //             value=""
 //           />
 //         </div>
 // <div className="form-group">
-//   <label for="floor">Floor</label>
+//   <label for="Floor">Floor</label>
 //   <input
 //     type="file"
-//     id="floor"
+//     id="Floor"
 //     className="form-control"
 //     placeholder="Floor *"
 //     value=""
 //   />
 // </div>
 //         <div className="form-group">
-//           <label for="wall">Wall</label>
+//           <label for="Wall">Wall</label>
 //           <input
 //             type="file"
-//             id="wall"
+//             id="Wall"
 //             className="form-control"
 //             placeholder="Wall *"
 //             value=""
 //           />
 //         </div>
 //         <div className="form-group">
-//           <label for="roof">Roof</label>
+//           <label for="Roof">Roof</label>
 //           <input
 //             type="file"
-//             id="roof"
+//             id="Roof"
 //             className="form-control"
 //             placeholder="Roof *"
 //             value=""
@@ -218,30 +206,30 @@ export default function HouseImageForm({
 //       </div>
 //       <div className="col-md-6">
 //         <div className="form-group">
-//           <label for="toilet">Toilet</label>
+//           <label for="Toilet">Toilet</label>
 //           <input
 //             type="file"
-//             id="toilet"
+//             id="Toilet"
 //             className="form-control"
 //             placeholder="Password *"
 //             value=""
 //           />
 //         </div>
 //         <div className="form-group">
-//           <label for="kitchen">Kitchen</label>
+//           <label for="Kitchenn">Kitchenn</label>
 //           <input
 //             type="file"
-//             id="kitchen"
+//             id="Kitchenn"
 //             className="form-control"
 //             placeholder="Confirm Password *"
 //             value=""
 //           />
 //         </div>
 //         <div className="form-group">
-//           <label for="shower">Shower</label>
+//           <label for="Shower">Shower</label>
 //           <input
 //             type="file"
-//             id="shower"
+//             id="Shower"
 //             className="form-control"
 //             placeholder="Confirm Password *"
 //             value=""

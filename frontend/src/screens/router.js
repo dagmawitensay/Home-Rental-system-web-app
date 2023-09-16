@@ -5,21 +5,23 @@ import PropertiesScreen from './Properties';
 import AboutUs from './About';
 import ContactUsScreen from './Contact';
 import HousePostScreen from './HouePosts';
-import AdminScreen from './Admin';
+import AdminScreen from './Admin/AdminListing';
+import AdminApprove from './Admin/AdminApprove';
 import LesserSignupForm from './Auth/lessersignup';
 import LesseSignUpForm from './Auth/lessesignup';
 import {
-    createBrowserRouter,
+    createBrowserRouter, redirect,
 } from 'react-router-dom';
 import Login from './Auth/login';
 import './app.css';
 import LesserUploadedHomes from './LesserPosts';
-
+import authService from '../services/auth.service';
 
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <HomeScreen />
+        element: authService.isLoggedIn ?  <HomeScreen /> : <Login />
+        
     },
     {
         path: '*',
@@ -43,7 +45,14 @@ const router = createBrowserRouter([
     },
     {
         path: '/admin',
-        element: <AdminScreen />
+        element: <AdminScreen />,
+        children: [
+            {
+                path: 'approve/:id',
+                element: <AdminApprove />
+            }
+        ]
+    
     },
     {
         path: '/login',

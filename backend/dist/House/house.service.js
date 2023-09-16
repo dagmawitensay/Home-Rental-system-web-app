@@ -136,7 +136,6 @@ let HouseService = class HouseService {
         if (query) {
             houseLists = await this.prisma.house.findMany({
                 where: {
-                    Approval_status: true,
                     Home_Type: query.Home_Type,
                     Sub_City: query.location,
                 },

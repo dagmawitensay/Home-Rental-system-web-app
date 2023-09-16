@@ -24,36 +24,36 @@ export default function HouseInfoForm({ nextStep, handleChange, values }) {
               <input
                 type="text"
                 id="type"
-                name='houseType'
+                name='Home_Type'
                 className="form-control"
                 placeholder="House Type *"
                 onChange={handleChange}
-                value={values.houseType}
+                value={values.Home_Type}
               />
             </div>
 
             <div className="form-group py-2 d-flex flex-column">
-              <label for="size">Size</label>
+              <label for="Size">Size</label>
               <input
                 type="text"
-                id="size"
-                name="size"
+                id="Size"
+                name="Size"
                 className="form-control"
                 placeholder="Size in meter square *"
                 onChange={handleChange}
-                value={values.size}
+                value={values.Size}
               />
             </div>
             <div className="form-group py-2 d-flex flex-column">
-              <label for="price">Price</label>
+              <label for="Price">Price</label>
               <input
                 type="text"
-                id="price"
-                name="price"
+                id="Price"
+                name="Price"
                 className="form-control"
                 onChange={handleChange}
                 placeholder="Price per month"
-                value={values.price}
+                value={values.Price}
               />
             </div>
             <div className="form-group py-2 d-flex flex-column">
@@ -69,15 +69,15 @@ export default function HouseInfoForm({ nextStep, handleChange, values }) {
               />
             </div>
             <div className="form-group py-2 d-flex flex-column">
-              <label for="city">City</label>
+              <label for="City">City</label>
               <input
                 type="text"
-                id="city"
-                name="city"
+                id="City"
+                name="City"
                 className="form-control"
                 onChange={handleChange}
                 placeholder="City of your house found"
-                value={values.city}
+                value={values.City}
               />
             </div>
           </div>
@@ -87,35 +87,35 @@ export default function HouseInfoForm({ nextStep, handleChange, values }) {
               <input
                 type="text"
                 id="sub"
-                name="subCity"
+                name="Sub_City"
                 className="form-control"
                 onChange={handleChange}
-                placeholder="Sub-city/Town  your house found"
-                value={values.subCity}
+                placeholder="Sub-City/Town  your house found"
+                value={values.Sub_City}
               />
             </div>
             <div className="form-group py-2 d-flex flex-column">
-              <label for="wereda">Wereda</label>
+              <label for="Wereda">Wereda</label>
               <input
                 type="text"
-                id="wereda"
-                name="wereda"
+                id="Wereda"
+                name="Wereda"
                 className="form-control"
                 onChange={handleChange}
                 placeholder="Wereda your house found"
-                value={values.wereda}
+                value={values.Wereda}
               />
             </div>
             <div className="form-group py-2 d-flex flex-column">
-              <label for="kebele">Kebele</label>
+              <label for="Kebele">Kebele</label>
               <input
                 type="text"
-                id="kebele"
+                id="Kebele"
                 className="form-control"
-                name="kebele"
+                name="Kebele"
                 onChange={handleChange}
                 placeholder="Kebele your house found"
-                value={values.kebele}
+                value={values.Kebele}
               />
             </div>
             <div className="form-group py-2 d-flex flex-column">

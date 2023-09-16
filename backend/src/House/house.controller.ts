@@ -85,6 +85,9 @@ export class HouseController {
   async CreateHouse(
     @Param("id", ParseIntPipe) lesserId: number,
     @Body() dto: CreateHouseDto,@Body() body,@UploadedFiles() file: Array<Express.Multer.File>) {
+      console.log(file, "here printig file")
+      console.log(file["wall"][0])
+      console.log(body)
       body.Wall = `http://localhost:3336/housePhoto/${file["wall"][0].filename}`;
     body.Door = `http://localhost:3336/housePhoto/${file["door"][0].filename}`;
     body.Shower = `http://localhost:3336/housePhoto/${file["shower"][0].filename}`;
