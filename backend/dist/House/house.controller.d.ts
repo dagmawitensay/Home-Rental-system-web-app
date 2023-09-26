@@ -43,7 +43,7 @@ export declare class HouseController {
             Door: string;
         };
     })[]>;
-    getHouseById(houseId: number, lesseId: number): Promise<import(".prisma/client").House & {
+    getHouseById(houseId: number): Promise<import(".prisma/client").House & {
         lesser: Lesser;
         Home_Photo: import(".prisma/client").Home_Photo;
         _count: {

@@ -56,10 +56,16 @@ const getAllLesserHouses = async () => {
     return response.data;
 }
 
+const getHouseDetail  = async (houseId) => {
+    const response = await axios.get(API_URL + houseId, {headers: authHeader()})
+    return response.data;
+}
+
 
 const homeService = {
     registerHouse,
-    getAllLesserHouses
+    getAllLesserHouses,
+    getHouseDetail
 }
 
 export default homeService;

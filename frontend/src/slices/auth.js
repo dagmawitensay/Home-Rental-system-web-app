@@ -34,35 +34,31 @@ export const lesserRegister = createAsyncThunk(
 
 export const lesseeRegister = createAsyncThunk(
   "lessee/signup",
-  async({
-    First_Name,
-    Last_Name,
-    Email,
-    User_Name,
-    Password,
-    Region,
-    Phone_Number,
-  }, thunkAPI
+  async (
+    { First_Name, Last_Name, User_Name, Email, Password, Phone_Number },
+    thunkAPI
   ) => {
     try {
-        const response = await authService.lesseeRegister(First_Name,
-    Last_Name,
-    Email,
-    User_Name,
-    Password,
-    Region,
-    Phone_Number);
-    thunkAPI.dispatch(setMessage(response.data.message))
-    return response.data;
+      const response = await authService.lesseeRegister(
+        First_Name,
+        Last_Name,
+        User_Name,
+        Email,
+        Password,
+        Phone_Number
+      );
+      thunkAPI.dispatch(setMessage(response.data.message));
+
+      return response.data;
     } catch (error) {
-       const message =
-         (error.response &&
-           error.response.data &&
-           error.response.data.message) ||
-         error.message ||
-         error.toString();
-       thunkAPI.dispatch(setMessage(message));
-       return thunkAPI.rejectWithValue(); 
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+      thunkAPI.dispatch(setMessage(message));
+      return thunkAPI.rejectWithValue();
     }
   }
 );

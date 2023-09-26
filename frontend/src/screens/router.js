@@ -16,6 +16,7 @@ import Login from './Auth/login';
 import './app.css';
 import LesserUploadedHomes from './LesserPosts';
 import authService from '../services/auth.service';
+import HomeDetail from './Home/homedetail';
 
 const router = createBrowserRouter([
     {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
         element: <PropertiesScreen />
     },
     {
+        path: '/properties/:id',
+        element: <HomeDetail />
+    },
+    {
         path: '/about',
         element: <AboutUs />
     },
@@ -46,13 +51,11 @@ const router = createBrowserRouter([
     {
         path: '/admin',
         element: <AdminScreen />,
-        children: [
-            {
-                path: 'approve/:id',
-                element: <AdminApprove />
-            }
-        ]
     
+    },
+    {
+        path: 'admin/approve/:id',
+        element: <AdminApprove />
     },
     {
         path: '/login',
@@ -69,7 +72,7 @@ const router = createBrowserRouter([
     {
         path: '/uploadedhomes',
         element: <LesserUploadedHomes />
-    }
+    },
 ]);
 
 export default  router;

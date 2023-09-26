@@ -182,7 +182,7 @@ export class HouseService {
     if (query) {
       houseLists = await this.prisma.house.findMany({
         where: {
-          // Approval_status: true,
+          Approval_status: true,
     
           Home_Type: query.Home_Type,
           Sub_City: query.location,
@@ -228,7 +228,7 @@ export class HouseService {
 
   // get approved houses details
 
-  async GetHouseById(lesseId:number, houseId: number) {
+  async GetHouseById(houseId: number) {
     const findHouse = await this.prisma.house.findFirst({
       where: {
         Approval_status: true,

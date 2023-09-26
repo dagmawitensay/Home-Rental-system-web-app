@@ -26,6 +26,7 @@ export const getAllLesserHouses = createAsyncThunk("lesser/", async({}, thunkAPI
     }
 })
 
+
 const initialState = {home: {}, homes: []}
 
 const homeSlice = createSlice({

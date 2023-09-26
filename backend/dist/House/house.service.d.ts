@@ -41,7 +41,7 @@ export declare class HouseService {
             Door: string;
         };
     })[]>;
-    GetHouseById(lesseId: number, houseId: number): Promise<House & {
+    GetHouseById(houseId: number): Promise<House & {
         lesser: Lesser;
         Home_Photo: import(".prisma/client").Home_Photo;
         lesse: import(".prisma/client").LesseOnHouse[];

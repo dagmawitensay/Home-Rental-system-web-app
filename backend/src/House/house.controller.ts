@@ -148,8 +148,8 @@ export class HouseController {
 
     @Roles(Role.LESSE)
   @UseGuards(AtGuards, RolesGuard)
-  @Get(":idhome/lesse/:idlesse")
-  getHouseById(@Param("idhome", ParseIntPipe) houseId: number,@Param("idlesse", ParseIntPipe) lesseId: number) {
-    return this.houseService.GetHouseById(lesseId, houseId);
+  @Get(":idhome/")
+  getHouseById(@Param("idhome", ParseIntPipe) houseId: number) {
+    return this.houseService.GetHouseById(houseId);
   }
 }

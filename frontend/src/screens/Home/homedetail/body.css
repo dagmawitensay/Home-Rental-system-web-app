@@ -1,0 +1,22 @@
+.house-image {
+  width: 100%;
+  height: auto;
+}
+
+.house-type {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.house-info {
+  margin-top: 20px;
+}
+
+.house-info-item {
+  margin-bottom: 10px;
+}
+
+.info-label {
+  font-weight: bold;
+}

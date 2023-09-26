@@ -66,8 +66,8 @@ let HouseController = class HouseController {
     GetAllHouseByAnyOne(query) {
         return this.houseService.GetAllHouseByAnyOne(query);
     }
-    getHouseById(houseId, lesseId) {
-        return this.houseService.GetHouseById(lesseId, houseId);
+    getHouseById(houseId) {
+        return this.houseService.GetHouseById(houseId);
     }
 };
 __decorate([
@@ -169,11 +169,10 @@ __decorate([
 __decorate([
     (0, role_auth_1.Roles)(role_enum_1.Role.LESSE),
     (0, common_1.UseGuards)(House_guard_1.AtGuards, role_auth_guard_1.RolesGuard),
-    (0, common_1.Get)(":idhome/lesse/:idlesse"),
+    (0, common_1.Get)(":idhome/"),
     __param(0, (0, common_1.Param)("idhome", common_1.ParseIntPipe)),
-    __param(1, (0, common_1.Param)("idlesse", common_1.ParseIntPipe)),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number, Number]),
+    __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", void 0)
 ], HouseController.prototype, "getHouseById", null);
 HouseController = __decorate([

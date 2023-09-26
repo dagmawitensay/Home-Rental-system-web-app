@@ -1,6 +1,7 @@
 import React ,{ useEffect, useState } from "react";
 import axios from "axios";
 import Card from "../../screens/common/card";
+import { useNavigate } from "react-router";
 
 
 const Access_Key = process.env.REACT_APP_Access_Key
@@ -11,6 +12,7 @@ export default function HomeListing() {
     const [prevDisabled, setPrevDisabled] = useState(false);
     const [nextDisabled, setNextDisabled] = useState(false);
     const [res, setRes] = useState([]);
+    const navigate = useNavigate();
     useEffect(() => {
       axios(`http://localhost:3336/house/`)
         .then((response) => {
@@ -25,6 +27,11 @@ export default function HomeListing() {
       //   // Cleanup logic
       // };
     }, [no]);
+
+    const handleClick = (id) => {
+      navigate(`/properties/${id}`);
+    
+    }
   
     return (
       <div className="row" id="options">
@@ -37,6 +44,7 @@ export default function HomeListing() {
             src={home.Home_Photo.Door}
             price={home.Price}
             imageId="1"
+            onClick={() => {handleClick(home.id)}}
           />
         ))}
         {/* <div className="d-flex justify-content-center">

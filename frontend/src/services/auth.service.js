@@ -4,8 +4,8 @@ import { applyMiddleware } from "redux";
 
 const API_URL = "http://localhost:3336/user/";
 
-const lesserRegister = (First_Name, Last_Name, Email, User_Name,  Password, Region, Zone, Wereda, City, Phone_Number) => {
-    return axios.post(API_URL + "lesser/signup", {
+const lesserRegister = async (First_Name, Last_Name, Email, User_Name,  Password, Region, Zone, Wereda, City, Phone_Number) => {
+    const response = await axios.post(API_URL + "lesser/signup", {
         First_Name,
         Last_Name,
         Email,
@@ -17,17 +17,29 @@ const lesserRegister = (First_Name, Last_Name, Email, User_Name,  Password, Regi
         City,
         Phone_Number
     });
+    
+    return response;
 };
 
-const lesseeRegister = (First_Name, Last_Name, Email, User_Name, Password, Phone_Number) => {
-    return axios.post(API_URL + "lesse/signup", {
-        First_Name,
-        Last_Name,
-        Email,
-        User_Name,
-        Password,
-        Phone_Number
-    });
+const lesseeRegister = async (
+  First_Name,
+  Last_Name,
+  User_Name,
+  Email,
+  Password,
+  Phone_Number
+) => {
+  console.log(First_Name, Last_Name, User_Name, Email, Password, Phone_Number);
+  const response = await axios.post(API_URL + "lesse/signup", {
+    First_Name,
+    Last_Name,
+    User_Name,
+    Email,
+    Password,
+    Phone_Number,
+  });
+  console.log(response)
+  return response;
 };
 
 const login = async (User_Name, Password) => {
@@ -39,7 +51,7 @@ const login = async (User_Name, Password) => {
     if (response.data.Tokens.access_token) {
         localStorage.setItem("user", JSON.stringify(response.data));
     }
-    console.log(response.data);
+
     return response.data;
 }
 
