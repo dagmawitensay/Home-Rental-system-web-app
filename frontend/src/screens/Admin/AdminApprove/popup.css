@@ -1,0 +1,21 @@
+.Modal {
+  width: 25%;
+  background-color: green;
+  position: fixed;
+  top: 40%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  height: 25%;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black; 
+}
+
+.message {
+    color: white;
+    display: flex;
+    align-self: center;
+}

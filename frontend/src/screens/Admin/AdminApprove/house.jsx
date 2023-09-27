@@ -1,21 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { approve} from "../../../slices/admin";
+import { approve } from "../../../slices/admin";
 import adminService from "../../../services/admin.service";
+import './popup.css';
+import Popup from "./popup";
 
 export default function HouseDetail(props) {
   const [content, setContent] = useState({});
   const dispatch = useDispatch();
+  const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
     adminService.getHouseDetail(props.id).then((response) => {
       setContent(response.data);
-      // console.log(response.data)
     });
   }, []);
   function handleApproval(houseId, approvalStatus) {
-    dispatch(approve({houseId, approvalStatus})).unwrap().then((response) => {
-        console.log(response)
-    })
+    dispatch(approve({ houseId, approvalStatus }))
+      .unwrap()
+      .then((response) => {
+        console.log(response);
+      });
   }
 
   console.log(content);
@@ -97,21 +101,40 @@ export default function HouseDetail(props) {
           </div>
         </div>
         <div className="row">
-          <div className="col-md-6 text-center">
+          <div className="col-md-6 text-center pb-3">
             <button
               className="btn btn-lg btn-primary"
-              onClick={() => handleApproval(content.id, true)}
+              onClick={() => {
+                handleApproval(content.id, true);
+                return setIsOpen(true);
+              }}
             >
               Approve
             </button>
+            <Popup
+              setIsOpen={setIsOpen}
+              isOpen={isOpen}
+              text="House has been approved successfuly!"
+              status={true}
+            />
           </div>
           <div className="col-md-6 text-center">
             <button
               className="btn btn-lg btn-primary"
-              onClick={() => handleApproval(content.id, null)}
+              onClick={() => {
+                handleApproval(content.id, null);
+                return setIsOpen(true);
+              }}
             >
-              Disaprove
+              Disapprove
             </button>
+            <Popup
+              handleApproval={handleApproval}
+              setIsOpen={setIsOpen}
+              isOpen={isOpen}
+              content={content}
+              text="House has been disapproved successfuly!"
+            />
           </div>
         </div>
       </div>

@@ -72,7 +72,7 @@ export const login = createAsyncThunk('signin', async({
         return response;
     } catch (error) {
         const message = error.toString();
-        thunkAPI.dispatch(setMessage(message));
+        thunkAPI.dispatch(setMessage("User Name or Password not correct!"));
         return thunkAPI.rejectWithValue();
     }
 })

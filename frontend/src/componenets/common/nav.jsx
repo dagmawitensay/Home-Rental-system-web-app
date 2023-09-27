@@ -2,14 +2,15 @@ import React, { useState, useEffect } from "react";
 import "./nav.css";
 import House from "../../Foo/Home/HouseLine (1).png";
 import { useDispatch, useSelector } from "react-redux";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from "react-router-dom";
 import { logout } from "../../slices/auth";
-import { Navigate } from "react-router-dom";
+
 
 export default function NavBar(props) {
   const [showAdminBoard, setShowAdminBoard] = useState(false);
   const [showLesserBoard, setShowLesserBoard] = useState(false);
   const [showLesseBoard, setShowLesseBoard] = useState(false);
+  const navigate = useNavigate();
 
   const { user: currentUser } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
@@ -17,7 +18,7 @@ export default function NavBar(props) {
     dispatch(logout())
       .unwrap()
       .then(() => {
-        <Navigate to="/login" />
+        navigate("/login" );
       })
       .catch(() => {
   

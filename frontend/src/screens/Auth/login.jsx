@@ -44,20 +44,20 @@ const handleLogin = (formValue) => {
     });
 }
 
-if (isLoggedIn) {
-  const user = JSON.parse(localStorage.getItem('user'));
-  console.log(user)
-  const role = user.user.role;
-  switch (role) {
-    case 'LESSER':
-      return <Navigate to="/uploadedhomes" />
-    case 'LESSE':
-      return <Navigate to="/properties" />
-    case 'ADMIN':
-      return <Navigate to="/admin" />
+  if (isLoggedIn) {
+    const user = JSON.parse(localStorage.getItem("user"));
+    console.log(user);
+    const role = user.user.role;
+    switch (role) {
+      case "LESSER":
+        return <Navigate to="/uploadedhomes" />;
+      case "LESSE":
+        return <Navigate to="/properties" />;
+      case "ADMIN":
+        return <Navigate to="/admin" />;
+    }
+    return <Navigate to="/profile" />;
   }
-  return <Navigate to="/profile" />
-}
 
 
 return (
