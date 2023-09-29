@@ -4,8 +4,12 @@ import HouseInfoForm from "./houseinfoform";
 import { useDispatch, useSelector } from "react-redux";
 import HouseImageForm from "./houseimagefrom";
 import { registerHouse } from "../../slices/homes";
+import { useNavigate } from "react-router";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function HouseRegistrationForm() {
+  const navigate = useNavigate();
   const initialValues = {
     step: 1,
     Home_Type: "",
@@ -94,25 +98,29 @@ export default function HouseRegistrationForm() {
     })
   }
 
-  const handleSubmit = () => {
-    console.log(currState);
-   
-    dispatch(
-      registerHouse({
-        currState
-      })
-    )
-      .unwrap()
-      .then((response) => {
-        console.log(response)
-        // navigate("/properties");
-        // window.location.reload();
-        // console.log("to change");
-      })
-      .catch(() => {
-        // setLoading(false);
-      });
-  }
+ const handleSubmit = () => {
+   dispatch(registerHouse({ currState }))
+     .unwrap()
+     .then((response) => {
+       console.log(response);
+       console.log(response.status)
+       // Check the status of the response and show a toaster accordingly
+       if (response.status === 201) {
+         toast.success("Request successful!", {
+           onClose: () => {
+             // Redirect the user to another page
+             navigate("/uploadedhomes");
+           },
+         });
+       } else {
+         toast.error("Request failed.");
+       }
+     })
+     .catch(() => {
+       toast.error("An error occurred.");
+     });
+ };
+
 
     const { step } = currState;
   const {
@@ -214,6 +222,7 @@ export default function HouseRegistrationForm() {
                   values={values}
                 />
               )}
+              <ToastContainer />
             </div>
           </div>
         </div>

@@ -13,8 +13,7 @@ export default function Body(){
                 console.log("on lessser house boyd")
                 console.log(response)
                 setContent(response);
-            }, (error) => {
-                
+            }, (error) => { 
                 const _content = (error.response && error.response.data && error.response.data.message) || error.toString();
                 setContent([])
              

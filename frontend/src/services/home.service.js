@@ -41,10 +41,11 @@ const lesserId = getLesserId();
             ...auth
         },
     }).then((response) => {
-        console.log(response)
+        return response;
     }).catch((error) => {
-        console.log(error)
-    })
+
+    });
+    return response;
 };
 
 

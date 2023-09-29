@@ -22,7 +22,7 @@ export const lesserRegister = createAsyncThunk(
     try {
         const response = await authService.lesserRegister(First_Name, Last_Name, Email, User_Name,  Password, Region, Zone, Wereda, City, Phone_Number);
         thunkAPI.dispatch(setMessage(response.data.message));
-        return response.data;
+        return response;
     }catch(error) {
       console.log(error)
         const message = (error.response && error.response.data && error.response.data.message) || error.message || error.toString();

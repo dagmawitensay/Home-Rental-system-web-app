@@ -11,7 +11,7 @@ export const registerHouse = createAsyncThunk(
       const response = await homeService.registerHouse(
         currState
       );
-      return response.data;
+      return response;
     } catch (error) {}
   }
 );
