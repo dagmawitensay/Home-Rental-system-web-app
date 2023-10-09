@@ -59,6 +59,7 @@ export default function HouseRegistrationForm() {
 
 
   const prevStep = () => {
+    console.log(currState)
     setState((prevValues) => {
         return {
             ...prevValues,
@@ -68,6 +69,7 @@ export default function HouseRegistrationForm() {
   };
 
   const nextStep = () => {
+    console.log(currState);
     setState((prevValues) => {
         return {
             ...prevValues,

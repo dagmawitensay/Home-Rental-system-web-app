@@ -7,3 +7,11 @@
 .main-description {
     color: #EDEFF6;
 }
+
+@media screen and (max-width: 700px) {
+    .main-text {
+        width: 100%;
+        margin: 4rem 0;
+        padding: 4rem 0;
+    }
+}

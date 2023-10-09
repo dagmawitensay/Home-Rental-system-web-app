@@ -1,3 +1,9 @@
 main {
     width: 68%;
 }
+
+@media screen and (max-width: 700px) {
+    main{
+        width: 85%;
+    }
+}

@@ -5,3 +5,9 @@
 .topic p {
     color: #889099;
 }
+
+@media screen and (max-width: 700px){
+    .topic {
+        width: 95%
+    }
+}

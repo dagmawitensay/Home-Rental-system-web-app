@@ -56,9 +56,6 @@ export class HouseController {
   }
 
 
-
-
-
  // LESSER ROLES
 //CREATE HOUSES
   @Roles(Role.LESSER)

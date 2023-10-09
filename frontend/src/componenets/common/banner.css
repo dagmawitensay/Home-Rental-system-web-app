@@ -1,0 +1,13 @@
+@media screen and (max-width: 700px) {
+    .child1{
+        width: 190px;
+    }
+    .telephone {
+        display: flex;
+    }
+    .icons {
+        display: grid;
+        grid-template-columns: 40px 40px 40px;
+        grid-template-rows: 30px 30px;
+    }
+}

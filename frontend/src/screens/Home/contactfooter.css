@@ -10,3 +10,9 @@
 .base-topic {
     width:37%;
 }
+
+@media screen and (max-width: 700px) {
+    .base-topic {
+        width: 90%
+    }
+}

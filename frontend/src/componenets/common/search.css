@@ -11,3 +11,9 @@
 .selected {
     color: grey;
 }
+
+@media screen and (max-width: 700px) {
+    .searchbox {
+        border-radius: 0px;
+    }
+}
