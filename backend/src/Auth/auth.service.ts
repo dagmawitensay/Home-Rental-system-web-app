@@ -67,7 +67,7 @@ export class AuthService {
         role: 'LESSER',
         lesser:{
           create:{...lesserDto}
-        }
+        },
       },
     });
    
@@ -108,10 +108,9 @@ export class AuthService {
     //       authorId,
     //       ...createDto,
     //     },
-      //  }); 
+    //    }); 
       
-        
-// }
+      
 
     const tokens = await this.GetToken(
       NewUser.id,

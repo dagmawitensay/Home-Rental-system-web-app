@@ -20,3 +20,28 @@
 .info-label {
   font-weight: bold;
 }
+
+.round {
+  border-radius: 15px 0 0 15px;
+}
+
+.main {
+  width: 75%
+}
+
+.main-image {
+  height: 410px;
+}
+
+@media screen and (max-width: 700px) {
+  .image {
+    height: 380px;
+    width: 100%;
+    border-radius: 15px;
+    /* padding: 5px; */
+  }
+
+  .main {
+    width: 80%;
+  }
+}

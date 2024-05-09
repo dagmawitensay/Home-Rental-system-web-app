@@ -4,6 +4,7 @@
     }
     .telephone {
         display: flex;
+        padding: 0
     }
     .icons {
         display: grid;

@@ -32,6 +32,7 @@
     "body-parser": "^1.20.1",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
+    "dotenv": "^16.4.5",
     "file-type": "^18.2.0",
     "passport": "^0.6.0",
     "passport-jwt": "^4.0.1",

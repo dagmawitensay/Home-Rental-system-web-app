@@ -6,7 +6,7 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -32,21 +32,11 @@ model Admin {
     author  User  @relation(fields: [authorId], references: [id],onDelete: Cascade)
     authorId  Int  @unique
     First_Name String
-Last_Name String
-Phone_Number String
-Email String
-  
-  
-
-    
+    Last_Name String
+    Phone_Number String
+    Email String
+   
   }
-
-
-
-
-
-
-
 
   model Lesser {
     id    Int  @id @default(autoincrement())

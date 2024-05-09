@@ -18,41 +18,41 @@ export default function Body(props) {
         </div>)
     }
     return (
-      <div className="w-75 m-auto py-5">
+      <div className="m-auto py-5 main">
         <div id="images" className="row">
           <div className="col-md-6 pe-0" >
             <img
               src={content.Home_Photo.Door}
-              className="img-fluid rounded-start-4"
-              style={{height: '410px'}}
+              className="img-fluid round image main-image"
             />
           </div>
           <div className="col-md-6 row">
             <div className="col-md-6 pe-0">
               <img
+
                 src={content.Home_Photo.Floor}
-                className="img-fluid pb-2"
+                className="img-fluid pb-2 image"
                 style={{ height: "210px", width: '100%' }}
               />
             </div>
             <div className="col-md-6">
               <img
                 src={content.Home_Photo.Shower}
-                className="img-fluid"
+                className="img-fluid image"
                 style={{ borderRadius: "0 15px 0 0", height: '200px' }}
               />
             </div>
             <div className="col-md-6 pe-0">
               <img
                 src={content.Home_Photo.Kitchen}
-                className="img-fluid pb-2"
+                className="img-fluid pb-2 image"
                 style={{ height: "210px" }}
               />
             </div>
             <div className="col-md-6">
               <img
                 src={content.Home_Photo.Toilet}
-                className="img-fluid"
+                className="img-fluid image"
                 style={{ borderRadius: "0 0 15px 0", height: '200px' }}
               />
             </div>

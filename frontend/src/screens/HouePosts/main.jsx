@@ -87,6 +87,7 @@ export default function HouseRegistrationForm() {
             [name] : value
         }
     })
+
   }
 
   const handleFileChange = (event) => {

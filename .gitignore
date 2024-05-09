@@ -5,6 +5,7 @@
 /backend/node_modules
 /backend/prisma/migrations
 /backend/House_photos
+/backend/.env
 
 # Logs
 logs

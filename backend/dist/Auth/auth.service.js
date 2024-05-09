@@ -61,7 +61,7 @@ let AuthService = class AuthService {
                 role: 'LESSER',
                 lesser: {
                     create: Object.assign({}, lesserDto)
-                }
+                },
             },
         });
         const tokens = await this.GetToken(NewUser.id, NewUser.User_Name, NewUser.role);
