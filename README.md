@@ -97,5 +97,5 @@ Before you begin, make sure you have the following software and tools installed:
 
 ## 📝 License
 
-Copyright © 2021 [Dagmawi Tensay](https://github.com/dagiTensay). <br />
+Copyright © 2022 [Dagmawi Tensay](https://github.com/dagiTensay). <br />
 This project is [MIT](https://github.com/dagiTensay/Home-Rental-system-web-app/blob/master/LICENSE) licensed.
